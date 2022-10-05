@@ -1,0 +1,19 @@
+.home-container {
+   border: 2px solid red;
+   padding: 5em;
+}
+
+.transfer-animation {
+   overflow: hidden;
+   border-right: .05em solid orange;
+   white-space: nowrap;
+   margin: 0 auto;
+   letter-spacing: .15em;
+   animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+   50% {
+      border-color: transparent;
+   }
+}
