@@ -4,9 +4,7 @@ const ProfileContainer = ({ user }) => {
    const { name, email } = user
    return (
       <div className="profileContainer">
-         <div className="profile-header">
-            <h1>{name}</h1>
-         </div>
+            <h1 className='profile-name'>{name}</h1>
          <div className="profile-links">
          </div>
       </div>
