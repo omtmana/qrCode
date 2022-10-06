@@ -12,11 +12,15 @@
    border: 2px solid #FFA347;
       width: 15em;
       padding-bottom: 5em;
-      padding-left: 2em;
-      padding-right: 2em;
+      padding-left: 3em;
+      padding-right: 3em;
       /* margin-top: 7em; */
       border-radius: 1em;
       box-shadow: 5px 10px 18px #88888861;
+}
+
+.signup-text {
+   font-size: 3em;
 }
 
 .signup-name {

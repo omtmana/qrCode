@@ -36,7 +36,7 @@ const Generator = () => {
             <div className='qr-image-main-container'>
                {qr && <div className='qr-image-container'>
                   <img src={qr} className='qr-image' />
-                  <a href={qr} download="qrcode.png">Download</a>
+                  <a href={qr} download="qrcode.png" style={{textDecoration:'none', color: 'orange', fontSize:'1.7em'}}>Download</a>
                </div>
                }
             </div>
