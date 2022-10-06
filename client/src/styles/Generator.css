@@ -1,6 +1,6 @@
 .generator {
    display: flex;
-   border: 2px solid pink;
+   /* border: 2px solid pink; */
    margin: 3em;
    height: 40em;
    justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 .generator-container {
-   border: 2px solid violet;
+   /* border: 2px solid violet; */
    display: flex;
    flex-direction: column;
    /* justify-content: center; */
@@ -16,7 +16,31 @@
    height: 28em;
    width: 60em;
    margin: 2em;
-   padding: 2em;
+   /* padding: -2em; */
+}
+
+.generator-button {
+   margin-top: 1em;
+   border: 2px solid #349BBC;
+   background-color: #349BBC;
+   color: white;
+   /* border: 1px solid orange; */
+   width: 10em;
+   height: 2.3em;
+   border-radius: 6px;
+   /* padding-top: 1em; */
+}
+
+.qr-name {
+   font-size: 3em;
+}
+
+.qr-input {
+   border-color: grey;
+   border-radius: 5px;
+   margin-top: -1em;
+   height: 2em;
+   width: 15em;
 }
 
 .qr-image-container {
@@ -29,6 +53,8 @@
    display: block;
       width: 350px;
       height: 350px;
+      border-radius: 1em;
+      /* background-color: white; */
       /* margin: 2rem auto; */
 }
 

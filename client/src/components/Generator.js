@@ -25,13 +25,14 @@ const Generator = () => {
    return (
       <div className="generator">
          <div className='generator-container'>
-            <h1>QR Generator</h1>
+            <h1 className='qr-name'>QR Generator</h1>
             <input
                type="text"
                placeholder="URL goes here"
+               className='qr-input'
                value={url}
                onChange={e => setUrl(e.target.value)} />
-            <button onClick={GenerateQRCode}>Generate</button>
+            <button onClick={GenerateQRCode} className='generator-button'>Generate</button>
             <div className='qr-image-main-container'>
                {qr && <div className='qr-image-container'>
                   <img src={qr} className='qr-image' />
