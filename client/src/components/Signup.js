@@ -13,7 +13,8 @@ const Signup = ({setUser}) => {
       const formData = {
          'name': name,
          'email': email,
-         'password': password
+         'password': password,
+         'image': profilePic
       }
       fetch('/signup', {
          method: 'POST',
@@ -36,7 +37,7 @@ const Signup = ({setUser}) => {
       <div className='signup'>
          <div className='signup-container'>
             <h1 className='signup-text'> Sign up! </h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                <div>
                <input
                   type='text'
@@ -73,8 +74,8 @@ const Signup = ({setUser}) => {
                   onChange={e => setProfilePic(e.target.value)}
                />
                </div>
+            <button className='signup-button'> Sign Up </button>
             </form>
-            <button onSubmit={handleSubmit} className='signup-button'> Sign Up </button>
          </div>
       </div>
    )

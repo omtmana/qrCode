@@ -35,7 +35,7 @@ const Login = ({ setUser }) => {
       <div className="login">
          <div className='login-form'>
             <h1 style={{ fontSize: "2.2em", fontFamily: "Caveat", fontWeight: "900" }} > Login </h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                <div>
                   <input type='text'
                      placeholder="Email"
@@ -52,8 +52,8 @@ const Login = ({ setUser }) => {
                      onChange={e => setPassword(e.target.value)}
                   />
                </div>
+            <button className='login-submit-button'> Submit </button>
             </form>
-            <button className='login-submit-button' onSubmit={handleSubmit}> Submit </button>
             <p style={{ fontSize: '12px', color: '#349BBC' }}>Forgot email or password?</p>
             <p style={{ fontSize: '12px' }}> Don't have account? <span style={{ fontSize: '12px', color: '#349BBC' }}>Sign up!</span> </p>
          </div>
