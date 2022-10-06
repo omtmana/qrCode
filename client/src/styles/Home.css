@@ -1,7 +1,14 @@
-.home-container {
-   border: 2px solid red;
+.home {
+   /* border: 2px solid red; */
    padding: 5em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* margin: 5em; */
+   height: 25em;
+   padding-top: 5em;
 }
+
 
 .transfer-animation {
    overflow: hidden;
@@ -10,6 +17,11 @@
    margin: 0 auto;
    letter-spacing: .15em;
    animation: caret 1s steps(1) infinite;
+}
+
+.transfer-animation{
+   filter: drop-shadow(-1px 1px 1px orange);
+   /* font-size: 10em; */
 }
 
 @keyframes caret {

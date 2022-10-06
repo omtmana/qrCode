@@ -23,18 +23,23 @@ const Generator = () => {
    }
 
    return (
-      <div className="app">
-         <h1>QR Generator</h1>
-         <input
-            type="text"
-            placeholder="e.g. https://google.com"
-            value={url}
-            onChange={e => setUrl(e.target.value)} />
-         <button onClick={GenerateQRCode}>Generate</button>
-         {qr && <>
-            <img src={qr} />
-            <a href={qr} download="qrcode.png">Download</a>
-         </>}
+      <div className="generator">
+         <div className='generator-container'>
+            <h1>QR Generator</h1>
+            <input
+               type="text"
+               placeholder="URL goes here"
+               value={url}
+               onChange={e => setUrl(e.target.value)} />
+            <button onClick={GenerateQRCode}>Generate</button>
+            <div className='qr-image-main-container'>
+               {qr && <div className='qr-image-container'>
+                  <img src={qr} className='qr-image' />
+                  <a href={qr} download="qrcode.png">Download</a>
+               </div>
+               }
+            </div>
+         </div>
       </div>
    )
 }
