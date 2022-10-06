@@ -1,9 +1,11 @@
 import '../styles/Login.css'
-import { useState } from 'react'
+import { useState, useNavigate } from 'react'
 
 const Login = ({ setUser }) => {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
+
+   const navigate = useNavigate()
 
    const handleSubmit = (e) => {
       e.preventDefault()
@@ -20,7 +22,7 @@ const Login = ({ setUser }) => {
       }).then((res) => {
          if (res.ok) {
             res.json().then((user) => setUser(user))
-            // navigate('/profile')
+            // navigate('/')
             console.log(formData)
             // } else {
             //   res.json().then((err) => setErrors(err.errors))
