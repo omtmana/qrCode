@@ -1,14 +1,35 @@
 import '../styles/Signup.css'
 import { useState } from 'react'
 
-const Signup = () => {
+const Signup = ({setUser}) => {
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
    const [profilePic, setProfilePic] = useState('')
 
+
    const handleSubmit = ((e) => {
-      e.preventDefault();
+      e.preventDefault()
+      const formData = {
+         'name': name,
+         'email': email,
+         'password': password
+      }
+      fetch('/signup', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(formData)
+      }).then((res) => {
+         if (res.ok) {
+            res.json().then((user) => setUser(user))
+            // navigate('/profile')
+            console.log(formData)
+         } else {
+            res.json().then((data) => alert(data.error))
+         }
+      })
    })
 
    return (
