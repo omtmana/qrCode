@@ -1,11 +1,14 @@
 import '../styles/Signup.css'
 import { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const Signup = ({setUser}) => {
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
    const [profilePic, setProfilePic] = useState('')
+
+   const navigate = useNavigate()
 
 
    const handleSubmit = ((e) => {
@@ -25,7 +28,7 @@ const Signup = ({setUser}) => {
       }).then((res) => {
          if (res.ok) {
             res.json().then((user) => setUser(user))
-            // navigate('/profile')
+            navigate('/')
             console.log(formData)
          } else {
             res.json().then((data) => alert(data.error))

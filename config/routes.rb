@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   # # Login and Logout Routes - Sessions.rb
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  # Links
+  get '/links', to: 'links#index'
+  get '/links/:id', to: 'links#show'
+
+  post '/links', to: 'links#create'
 end

@@ -1,5 +1,6 @@
 import '../styles/Login.css'
-import { useState, useNavigate } from 'react'
+import { useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const Login = ({ setUser }) => {
    const [email, setEmail] = useState('')
@@ -22,7 +23,7 @@ const Login = ({ setUser }) => {
       }).then((res) => {
          if (res.ok) {
             res.json().then((user) => setUser(user))
-            // navigate('/')
+            navigate('/')
             console.log(formData)
             // } else {
             //   res.json().then((err) => setErrors(err.errors))
