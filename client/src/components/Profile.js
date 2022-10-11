@@ -9,6 +9,7 @@ const Profile = ({ user, setUser}) => {
    //       return <ProfileContainer key={user.id} user={user} />
    //    })
    // }
+   
    return (
       <div className="profile">
          <div className="profile-search">

@@ -2,12 +2,25 @@
    /* border: 2px solid red; */
    padding: 5em;
    display: flex;
+   flex-direction: row;
    justify-content: center;
    align-items: center;
    /* margin: 5em; */
    height: 25em;
    padding-top: 5em;
 }
+
+/* .home-text {
+   border: 2px solid peachpuff;
+}
+
+.home-image {
+   z-index: -1;
+   width: 20em;
+   height: 20em;
+   padding-top: -10em;
+   border: 2px solid green;
+} */
 
 
 .transfer-animation {
