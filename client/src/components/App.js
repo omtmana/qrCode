@@ -12,12 +12,7 @@ import {useState, useEffect} from 'react'
 
 const App = () => {
   const [user, setUser] = useState([])
-
-  // useEffect(() => {
-  //   fetch('/users')
-  //   .then(res => res.json())
-  //   .then((user) => setUser(user))
-  // })
+  const [userLinks, setUserLinks] = useState([])
 
   console.log("HERE", user)
   useEffect(() => {
@@ -31,12 +26,6 @@ const App = () => {
       }
     })
   }, []);
-
-  useEffect(() => {
-    fetch('/links')
-    .then(res => res.json())
-    .then(data => console.log(data))
-  })
 
   return (
     <div>

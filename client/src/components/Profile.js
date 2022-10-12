@@ -2,7 +2,7 @@ import ProfileContainer from "./ProfileContainer";
 import '../styles/Profile.css'
 import {useState} from 'react'
 
-const Profile = ({ user, setUser}) => {
+const Profile = ({ user }) => {
    const [searchLink, setSearchLink] = useState('')
    // const person = {
    //    user.map((user) => {
@@ -12,7 +12,7 @@ const Profile = ({ user, setUser}) => {
    
    return (
       <div className="profile">
-         <div className="profile-search">
+         {/* <div className="profile-search">
             <form>
                <input
                   type='text'
@@ -22,21 +22,14 @@ const Profile = ({ user, setUser}) => {
                   placeholder='Search Links'
                />
             </form>
-         </div>
-         <div className="profile-name-container">
-         {
-            user.map((user) => {
-               return <ProfileContainer key={user.id} user={user} />
-            })
-         }
-         </div>
-         {/* <div>
+         </div> */}
+         <div>
             {
                user.map((user) => {
-                  return <LinksContainer />
+                  return <ProfileContainer key={user.id} user={user} />
                })
             }
-         </div> */}
+         </div>
       </div>
    )
 }

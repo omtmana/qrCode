@@ -2,37 +2,28 @@ import '../styles/Login.css'
 import { useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const Login = ({ setUser }) => {
+const Login = ({ user, setUser }) => {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
 
    const navigate = useNavigate()
 
-   const handleSubmit = (e) => {
-      e.preventDefault()
+   const handleSubmit = ((e) => {
+      e.peventDefault()
       const formData = {
          'email': email,
-         'password': password
+         'password': password,
       }
       fetch('/login', {
          method: 'POST',
          headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
          },
          body: JSON.stringify(formData)
-      }).then((res) => {
-         if (res.ok) {
-            res.json().then((user) => setUser(user))
-            navigate('/')
-            console.log(formData)
-            // } else {
-            //   res.json().then((err) => setErrors(err.errors))
-            // }
-         }
       })
-      // .then(res => res.json())
-      // .then(user => setUser(user))
-   }
+      .then(res => res.json())
+      .then((data) => console.log('data', data))
+   })
 
    return (
       <div className="login">
