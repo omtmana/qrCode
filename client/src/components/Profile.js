@@ -23,13 +23,13 @@ const Profile = ({ user }) => {
                />
             </form>
          </div> */}
-         <div>
+         {/* <div>
             {
-               user.map((user) => {
+               user?.map((user) => {
                   return <ProfileContainer key={user.id} user={user} />
                })
             }
-         </div>
+         </div> */}
       </div>
    )
 }
