@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import '../styles/Header.css'
 
 const Header = () => {
    return (
-      <div>
+      <div className='header'>
          <Link to='/' style={{textDecoration: 'none', color: 'black'}}> Home </Link>
          <Link to='/generator' style={{ textDecoration: 'none', color: 'black' }}> Generator </Link>
          <Link to='/login' style={{ textDecoration: 'none', color: 'black' }}> Login </Link>

@@ -11,16 +11,67 @@
 
 .transfer-animation{
    filter: drop-shadow(-1px 1px 2px orange);
+   /* border: 2px solid orange; */
    /* font-size: 3em; */
 }
 
+.home-1 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order: 1;
+}
+
+.home-2 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order:1;
+}
+
+.home-3 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order: 1;
+}
+
+.home-text {
+   border: 2px solid orange;
+   order: 2;
+   flex-grow: 5;
+}
+
 .home-container {
-   /* border: 2px solid salmon; */
-   height: 30em;
+   display: flex;
+   /* flex-direction: column; */
+   border: 2px solid salmon;
+   /* height: 30em; */
+   /* width: 30em; */
+   justify-content: center;
    position: inherit;
    text-align: center;
-   /* padding-top: 3em; */
-   /* line-height: 30em; */
+}
+
+.home-4 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order: 3;
+}
+
+.home-5 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order: 3;
+}
+
+.home-6 {
+   border: 2px solid black;
+   height: 10em;
+   width: 10em;
+   order: 3;
 }
 
 .home-container-2 {
