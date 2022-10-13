@@ -15,11 +15,21 @@
    /* font-size: 3em; */
 }
 
+.home-container-left {
+   display: flex;
+   flex-wrap: wrap;
+   width: 10em;
+   height: 10em;
+}
+
 .home-1 {
    border: 2px solid black;
    height: 10em;
    width: 10em;
    order: 1;
+   display: flex;
+   flex-wrap: wrap;
+   background-color: black;
 }
 
 .home-2 {
@@ -34,6 +44,7 @@
    height: 10em;
    width: 10em;
    order: 1;
+   background-color: black;
 }
 
 .home-text {
