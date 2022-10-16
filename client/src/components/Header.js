@@ -4,6 +4,7 @@ import '../styles/Header.css'
 const Header = () => {
    return (
       <div className='header'>
+         {/* <img src='check.jpeg' className='bg-image'/> */}
          <Link to='/' style={{textDecoration: 'none', color: 'black'}}> Home </Link>
          <Link to='/generator' style={{ textDecoration: 'none', color: 'black' }}> Generator </Link>
          <Link to='/login' style={{ textDecoration: 'none', color: 'black' }}> Login </Link>
