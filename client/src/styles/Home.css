@@ -51,6 +51,7 @@
    /* border: 2px solid orange; */
    order: 2;
    flex-grow: 5;
+   height: 30em;
 }
 
 .home-container {
@@ -86,18 +87,41 @@
 }
 
 .home-container-2 {
-   /* border: 2px solid red; */
+   border: 15px solid black;
+   border-radius: 1em;
    /* width: 93%; */
    position: inherit;
    margin-top: 3em;
-   height: 10em;
-   padding-left: 2em;
+   height: 15em;
+   padding-left: 3em;
+   padding-top: 5em;
    background-color: orange;
-   font-size: 50px;
+   font-size: 30px;
+   display:flex;
+}
+
+.qrCode {
+   /* border: 2px solid black; */
+   padding-top: -2em;
+   padding-left: 5em;
+   background-color: orange;
+   animation-name: qrCode;
+   animation-duration: 1s;
+}
+
+
+@keyframes qrCode {
+   from {
+      background-color: orange;
+   }
+
+   to {
+      background-color: white;
+   }
 }
 
 .home-button-container {
-   border: 2px solid salmon;
+   /* border: 2px solid salmon; */
    /* margin-top: 2em; */
    height: 25em;
    text-align: center;
@@ -106,6 +130,12 @@
 
 .home-button {
    width: 14em;
-   height: 3em;
+   height: 3.7em;
+   background-color: white;
+   border-radius: 1em;
+   margin-top: 2em;
+   border: 1.5px solid #349BBC;
+   filter: drop-shadow(2px 1px 2px #349BBC)
+   /* font-family: 'Courier New', Courier, monospace; */
 }
 

@@ -22,10 +22,11 @@ const Home = () => {
             <div className='home-6'> 6 </div> */}
          </div>
          <div className='home-container-2'>
-            <h1> Type It. <br></br> Scan it.<br></br> Share it to your friends</h1>
+            <h1> Type it. <br></br> <span style={{ color: 'white' }}>Scan</span> it.<br></br><span  >Share</span> it to your friends.</h1>
+            <img src='QR_code.png' width='250' height='250' className='qrCode'/>
          </div>
          <div className='home-button-container'>
-            <p><span style={{fontFamily:'Caveat', fontSize:'6em'}}>Sign Up</span> now to save all your QR codes.</p>
+            <p><span style={{ fontFamily: 'Caveat', fontSize: '6em', verticalAlign:'super' }}>Sign Up</span><span style={{fontSize: '1.5em'}}>now to save all your QR codes.</span></p>
             <button onClick={handleButton} className='home-button'> Sign Up</button>
          </div>
       </div>

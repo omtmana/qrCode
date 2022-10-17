@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import '../styles/Header.css'
+import Check from '../check.jpeg'
 
 const Header = () => {
    return (
       <div className='header'>
-         {/* <img src='check.jpeg' className='bg-image'/> */}
+         <img src={Check} width='1800' />
          <Link to='/' style={{textDecoration: 'none', color: 'black'}}> Home </Link>
          <Link to='/generator' style={{ textDecoration: 'none', color: 'black' }}> Generator </Link>
          <Link to='/login' style={{ textDecoration: 'none', color: 'black' }}> Login </Link>
