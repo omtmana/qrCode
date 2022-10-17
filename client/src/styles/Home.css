@@ -106,24 +106,13 @@
    padding-left: 5em;
    background-color: orange;
    animation-name: qrCode;
-   animation-duration: 1s;
 }
 
-
-@keyframes qrCode {
-   from {
-      background-color: orange;
-   }
-
-   to {
-      background-color: white;
-   }
-}
 
 .home-button-container {
    /* border: 2px solid salmon; */
    /* margin-top: 2em; */
-   height: 25em;
+   height: 12em;
    text-align: center;
    padding: 15em;
 }
