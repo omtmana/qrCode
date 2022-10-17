@@ -87,7 +87,7 @@
 }
 
 .home-container-2 {
-   border: 15px solid black;
+   /* border: 15px solid black; */
    border-radius: 1em;
    /* width: 93%; */
    position: inherit;
@@ -95,7 +95,9 @@
    height: 15em;
    padding-left: 3em;
    padding-top: 5em;
-   background-color: orange;
+   margin-left: 1em;
+   margin-right: 1em;
+   background-color: rgba(255, 165, 0, 0.95);
    font-size: 30px;
    display:flex;
 }
@@ -104,7 +106,7 @@
    /* border: 2px solid black; */
    padding-top: -2em;
    padding-left: 5em;
-   background-color: orange;
+   /* background-color: orange; */
    animation-name: qrCode;
 }
 
@@ -112,7 +114,7 @@
 .home-button-container {
    /* border: 2px solid salmon; */
    /* margin-top: 2em; */
-   height: 12em;
+   height: 10em;
    text-align: center;
    padding: 15em;
 }

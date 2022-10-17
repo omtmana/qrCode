@@ -39,7 +39,7 @@ const Signup = ({setUser}) => {
    return (
       <div className='signup'>
          <div className='signup-container'>
-            <h1 className='signup-text'> Sign up! </h1>
+            <h1 className='signup-text' style={{fontFamily:'Caveat'}}> Sign up! </h1>
             <form onSubmit={handleSubmit}>
                <div>
                <input

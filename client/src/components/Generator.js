@@ -25,7 +25,7 @@ const Generator = () => {
    return (
       <div className="generator">
          <div className='generator-container'>
-            <h1 className='qr-name'>QR Generator</h1>
+            <h1 className='qr-name' style={{fontFamily: 'Caveat'}}>QR Generator</h1>
             <input
                type="text"
                placeholder="URL goes here"

@@ -4,6 +4,9 @@ const Footer = () =>{
       <div className="footer">
          <div className='footer-icons'>
             <button>♠︎</button>
+            <button>♣︎</button>
+            <button>♥︎</button>
+            <button>♦︎</button>
          </div>
       </div>
    )
