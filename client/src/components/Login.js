@@ -1,6 +1,7 @@
 import '../styles/Login.css'
 import { useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Login = ({ user, setUser }) => {
    const [email, setEmail] = useState('')
@@ -49,7 +50,7 @@ const Login = ({ user, setUser }) => {
             <button className='login-submit-button'> Submit </button>
             </form>
             <p style={{ fontSize: '12px', color: '#349BBC' }}>Forgot email or password?</p>
-            <p style={{ fontSize: '12px' }}> Don't have account? <span style={{ fontSize: '12px', color: '#349BBC' }}>Sign up!</span> </p>
+            <p style={{ fontSize: '12px' }}> Don't have account? <Link to='/signup' style={{ fontSize: '12px', color: '#349BBC', textDecoration:'none' }}> Sign Up!</Link> </p>
          </div>
       </div>
    )

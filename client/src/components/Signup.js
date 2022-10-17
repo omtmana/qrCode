@@ -1,6 +1,7 @@
 import '../styles/Signup.css'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Signup = ({setUser}) => {
    const [name, setName] = useState('')
@@ -79,6 +80,7 @@ const Signup = ({setUser}) => {
                </div>
             <button className='signup-button'> Sign Up </button>
             </form>
+            <p style={{fontSize:'15px', paddingTop:'.5em'}}>Already have an account? <Link to='/login' style={{ fontSize: '12px', color: '#349BBC', textDecoration: 'none' }}> Login here </Link></p>
          </div>
       </div>
    )
