@@ -1,6 +1,8 @@
 import QRCode from 'qrcode'
-import { useState } from 'react'
+// import QRCode from 'react-qr-code'
+import { useState, useEffect } from 'react'
 import '../styles/Generator.css'
+import CallingQR from './CallingQR'
 
 const Generator = () => {
    const [url, setUrl] = useState('')
@@ -44,5 +46,22 @@ const Generator = () => {
       </div>
    )
 }
+
+// const Generator = () => {
+//    const [src, setSrc] = useState('')
+
+//    useEffect(() => {
+//       // Qr Code package
+//       QRCode.toDataURL().then((data) => {
+//          setSrc(data)
+//       })
+//    }, [])
+//    return(
+//       <div>
+//          {/* <img src={src} /> */}
+//          <CallingQR src={src} setSrc={setSrc} />
+//       </div>
+//    )
+// }
 
 export default Generator;
