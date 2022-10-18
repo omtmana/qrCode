@@ -1,4 +1,4 @@
-const CallingQR = () => {
+const CallingQR = ({src, setSrc}) => {
    return(
       <div>
          <p> Hello </p>

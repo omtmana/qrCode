@@ -23,7 +23,7 @@ const Login = ({ user, setUser }) => {
          body: JSON.stringify(formData)
       })
       .then(res => res.json())
-      .then((data) => console.log('data', data))
+      .then((data) => setUser(data))
    })
 
    return (

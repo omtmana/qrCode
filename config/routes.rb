@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # Links
   get '/links', to: 'links#index'
   get '/links/:id', to: 'links#show'
-
   post '/links', to: 'links#create'
+
+  #CallingCode
+  get '/callingcodes', to: 'callingcodes#index'
+  get '/callingcodes', to: 'callingcodes#show'
+  post '/callingcodes', to: 'callingcodes#create'
 end

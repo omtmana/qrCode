@@ -2,11 +2,16 @@ class LinksController < ApplicationController
 #    get '/links', to: 'links#index'
 
    def index
-      render json: Links.all, status: 202
+      user = find_user
+      if user
+         render json: user.link
+      else
+         render json: {error: 'User Link not found'}
+      end
    end
 #   get '/links/:id', to: 'links#show'
    def show
-      link = Links.find_by(id: params[:id])
+      link = Link.find_by(id: params[:id])
       if links
          render json: link, status: 202
       else
@@ -21,6 +26,10 @@ class LinksController < ApplicationController
    end
 
    private
+
+   def find_user
+      User.find_by(id: session[:user_id])
+   end
 
    def link_params
       params.permit(:link_url, :link_title, :user_id)

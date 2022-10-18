@@ -3,10 +3,10 @@ import Footer from './Footer'
 // import Footer from "./sub-components/Footer";
 import '../styles/Layout.css'
 
-const Layout = ({children}) => {
+const Layout = ({children, user, setUser}) => {
    return (
       <>
-         <Header />
+         <Header user={user} setUser={setUser} />
          <main>{children}</main>
          <Footer />
       </>
