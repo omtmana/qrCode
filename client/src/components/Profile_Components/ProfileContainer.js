@@ -1,4 +1,3 @@
-import '../styles/Profile.css'
 
 const ProfileContainer = ({ user }) => {
    const { name, email} = user

@@ -2,7 +2,7 @@ import QRCode from 'qrcode'
 // import QRCode from 'react-qr-code'
 import { useState, useEffect } from 'react'
 import '../styles/Generator.css'
-import CallingQR from './CallingQR'
+// import CallingQR from './Profile_Components/CallingQR'
 
 const Generator = () => {
    const [url, setUrl] = useState('')

@@ -13,7 +13,6 @@ import {useState, useEffect} from 'react'
 const App = () => {
   const [user, setUser] = useState([])
   // const [userLinks, setUserLinks] = useState([])
-  const [links, setLinks] = useState([])
 
   console.log("HERE", user)
   useEffect(() => {
@@ -28,12 +27,6 @@ const App = () => {
     })
   }, []);
 
-  useEffect(() => {
-    fetch('/links')
-      .then((res) => res.json())
-      .then((links) => setLinks(links))
-  }, [])
-
   return (
     <div>
       <Layout>
@@ -42,7 +35,7 @@ const App = () => {
           <Route path='/login' element={<Login user={user} setUser={setUser} />}/>
           <Route path='/signup' element={<Signup user={user} setUser={setUser} />}/>
           <Route path='/generator' element={<Generator/>}/>
-          <Route path='/profile' element={<Profile user={user} setUser={setUser} links={links} setLinks={setLinks}/>}/>
+          <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
           <Route path='/layout' element={<Layout user={user} setUser={setUser}/>} />
         </Routes>
       </Layout>

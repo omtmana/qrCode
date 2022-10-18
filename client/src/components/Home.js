@@ -16,22 +16,18 @@ const Home = () => {
    return (
       <div className='home'>
          <div className='home-container'>
-            {/* <div className='home-1'> 1 </div>
-            <div className='home-2'> 2 </div>
-            <div className='home-3'> 3 </div> */}
             <div className='home-text'>
                <h1 style={{ fontSize: "9em", fontFamily: "Caveat" }} className='transfer-animation'> Scan Me! </h1>
             </div>
-            {/* <div className='home-4'> 4 </div>
-            <div className='home-5'> 5 </div>
-            <div className='home-6'> 6 </div> */}
          </div>
          <div className='home-container-2'>
+            <div className='home-container-2a'>
             <h1> Type it. <br></br> <span style={{ color: 'white' }}>Scan</span> it.<br></br><span  >Share</span> it to your friends.</h1>
-            <div>
+            </div>
+            <div className='home-container-2b'>
                {/* <img src='QR_code.png' width='250' height='250' className='qrCode' /> */}
                <p> Generate your QR Code! <Link to='/generator' style={{textDecoration:'none'}}> here </Link></p>
-               <button onClick={handleCode}> Try Now! </button>
+               <button onClick={handleCode} className='home-button'> Try Now! </button>
             </div>
          </div>
          <div className='home-button-container'>

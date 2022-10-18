@@ -15,91 +15,50 @@
    /* font-size: 3em; */
 }
 
-.home-container-left {
-   display: flex;
-   flex-wrap: wrap;
-   width: 10em;
-   height: 10em;
-}
-
-.home-1 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order: 1;
-   display: flex;
-   flex-wrap: wrap;
-   background-color: black;
-}
-
-.home-2 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order:1;
-}
-
-.home-3 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order: 1;
-   background-color: black;
-}
-
 .home-text {
    /* border: 2px solid orange; */
    order: 2;
    flex-grow: 5;
-   height: 30em;
+   padding-top: 3em;
+   height: 35em;
 }
 
 .home-container {
    display: flex;
-   /* flex-direction: column; */
-   /* border: 2px solid salmon; */
-   /* height: 30em; */
-   /* width: 30em; */
    justify-content: center;
    position: inherit;
    text-align: center;
 }
 
-.home-4 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order: 3;
-}
-
-.home-5 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order: 3;
-}
-
-.home-6 {
-   border: 2px solid black;
-   height: 10em;
-   width: 10em;
-   order: 3;
-}
-
 .home-container-2 {
    /* border: 15px solid black; */
-   border-radius: 1em;
-   /* width: 93%; */
+   /* border-radius: 1em; */
    position: inherit;
    margin-top: 3em;
    height: 15em;
-   padding-left: 3em;
-   padding-top: 5em;
-   margin-left: 1em;
-   margin-right: 1em;
-   background-color: rgba(255, 165, 0, 0.95);
+   justify-content: space-between;
+   /* padding: 3em; */
+   margin-left: 4em;
+   margin-right: 4em;
+   /* background-color: rgba(255, 165, 0, 0.50); */
    font-size: 30px;
    display:flex;
+}
+
+.home-container-2a {
+   border: 2px solid white;
+   padding: 3em;
+   /* height: 15em; */
+   border-radius: 1em;
+   background-color: rgb(255, 165, 0);
+}
+
+.home-container-2b {
+   border: 2px solid black;
+   border-radius: 1em;
+   /* margin-left: 3em; */
+   padding: 5em;
+   background-color: rgb(255, 165, 0);
 }
 
 .qrCode {
@@ -112,8 +71,8 @@
 
 
 .home-button-container {
-   /* border: 2px solid salmon; */
-   /* margin-top: 2em; */
+   border: 2px solid salmon;
+   margin-top: 2em;
    height: 10em;
    text-align: center;
    padding: 15em;

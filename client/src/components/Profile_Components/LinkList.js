@@ -1,4 +1,4 @@
-import LinkCard from "./LinkCard"
+import LinkCard from "./LinkCard";
 
 const LinkList = ({links}) => {
    return(

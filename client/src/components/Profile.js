@@ -1,7 +1,7 @@
-import ProfileContainer from "./ProfileContainer";
+import ProfileContainer from "./Profile_Components/ProfileContainer";
 import '../styles/Profile.css'
 import { useState, useEffect} from 'react'
-import LinkList from "./LinkList";
+import LinkList from "./Profile_Components/LinkList";
 
 const Profile = ({ user}) => {
    const [title, setTitle] = useState('')
