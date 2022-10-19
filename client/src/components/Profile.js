@@ -1,6 +1,7 @@
 import ProfileContainer from "./Profile_Components/ProfileContainer";
 import '../styles/Profile.css'
 import { useState, useEffect } from 'react'
+import { Navigate, useNavigate } from "react-router-dom";
 import LinkList from "./Profile_Components/LinkList";
 
 const Profile = ({ user, setUser }) => {
@@ -8,22 +9,24 @@ const Profile = ({ user, setUser }) => {
    const [url, setUrl] = useState('')
    const [links, setLinks] = useState([])
 
-   console.log('CurrentUser', user)
-   console.log('userLinks', user.links)
+   const navigate = useNavigate()
 
+   // console.log('CurrentUser', user)
+   // console.log('userLinks', user.links)
+
+   const handleCodeClick = () => {
+      navigate('/generator')
+   }
+   
    const userLinks = user.links.map((links) => {
       // console.log(links)
-      return (<li>
+      return (
+      <li>
          <h1>{links.link_title}</h1>
          <h3>{links.link_url}</h3>
-      </li>)
+      </li>
+      )
    })
-
-   useEffect(() => {
-      fetch('/links')
-         .then((res) => res.json())
-         .then((links) => console.log('links',links))
-   }, [])
 
    const handleNewCode = ((e) => {
       e.preventDefault();
@@ -42,9 +45,6 @@ const Profile = ({ user, setUser }) => {
          .this(link => setLinks(link))
    })
 
-   const handleCodeClick = () => {
-
-   }
 
 
    return (
@@ -72,13 +72,6 @@ const Profile = ({ user, setUser }) => {
                <button onSubmit={handleNewCode}>Add Code</button>
             </form>
             <ul> {userLinks}</ul>
-            {/* <ul>
-               {
-                  links.map((links) => {
-                     return <LinkList key={links.id} links={links}/>
-                  })
-               }
-            </ul> */}
          </div>
          <div className="profile-codes-container">
             <h3> My QR Codes </h3>

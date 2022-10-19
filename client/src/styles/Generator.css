@@ -1,7 +1,8 @@
 .generator {
    /* display: flex; */
+   /* border: 2px solid blue; */
    margin: 3em;
-   height: 40em;
+   /* height: ; */
    justify-content: center;
    font-family: 'Caveat' ;
 }
@@ -15,7 +16,8 @@
 }
 
 .generator-web-container {
-   border: 2px solid orange;
+   border: 1px solid #D3D3D3;
+   background-color: #F5F5F5;
    width: 15em;
    height: 15em;
    margin: 2em;
@@ -24,7 +26,8 @@
 }
 
 .generator-card-container {
-   border: 2px solid red;
+   border: 1px solid #D3D3D3;
+   background-color: #F5F5F5;
    text-align: center;
    width: 15em;
    height: 15em;
@@ -33,7 +36,8 @@
 }
 
 .generator-soon-container {
-   border: 2px solid violet;
+   border: 1px solid #D3D3D3;
+   background-color: #F5F5F5;
    text-align: center;
    width: 15em;
    height: 15em;
