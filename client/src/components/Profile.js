@@ -8,9 +8,14 @@ const Profile = ({ user, setUser}) => {
    const navigate = useNavigate()
    // console.log('CurrentUser', user)
    console.log('userLinks', user.links)
-
+   
    const handleCodeClick = () => {
       navigate('/generator')
+   }
+   
+   const handleAddLink = (newLink) => {
+      const updatedLinkList = [...user?.links, newLink]
+      setUser(updatedLinkList)
    }
    
    const userLinks = user?.links?.map((links) => {
@@ -22,10 +27,6 @@ const Profile = ({ user, setUser}) => {
       )
    })
 
-   const handleAddLink = (newLink) => {
-      const updatedLinkList = [...user?.links, newLink]
-      setUser(updatedLinkList)
-   }
 
 
    return (

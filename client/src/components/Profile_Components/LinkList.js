@@ -4,7 +4,7 @@ import { useState } from "react";
 const LinkList = ({ userId, onAddLink}) => {
    const [title, setTitle] = useState('')
    const [url, setUrl] = useState('')
-   const [links, setLinks] = useState([])
+   // const [links, setLinks] = useState([])
 
    const handleNewLink = ((e) => {
       e.preventDefault();
