@@ -1,14 +1,12 @@
 import LinkCard from "./LinkCard";
 
-const LinkList = ({links}) => {
+const LinkList = ({user, links}) => {
+   const {link_url, link_title} = links
+   console.log(links)
    return(
-      <ul>
-         {
-            links.map((links) => {
-               return <LinkCard key={links.id} links={links} />
-            })
-         }
-      </ul>
+      <li>
+         <h4>{user.links.link_title}</h4>
+      </li>
    )
 }
 

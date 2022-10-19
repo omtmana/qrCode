@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_162849) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_19_163913) do
   create_table "calling_codes", force: :cascade do |t|
     t.string "image"
     t.string "name"
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_162849) do
   create_table "links", force: :cascade do |t|
     t.string "link_url"
     t.string "link_title"
-    t.string "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
