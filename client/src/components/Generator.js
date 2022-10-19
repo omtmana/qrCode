@@ -47,16 +47,16 @@ const Generator = () => {
                <h4> Coming Soon: Images </h4>
             </div>
             <div className='generator-soon-container'>
-
+               <h4> Coming Soon: Wi-Fi </h4>
             </div>
             <div className='generator-soon-container'>
-
+               <h4> Coming Soon: WhatsApp</h4>
             </div>
             <div className='generator-soon-container'>
-
+               <h4> Coming Soon: Socials</h4>
             </div>
             <div className='generator-soon-container'>
-
+               <h4> Coming Soon: Call </h4>
             </div>
          </div>
       </div>
