@@ -1,6 +1,6 @@
 import QRCode from 'qrcode'
 import '../styles/App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './Layout'
 import Header from './Header'
 import Home from './Home'
@@ -9,7 +9,7 @@ import Website from './Generator_Components/Website'
 import Signup from './Signup'
 import Login from './Login'
 import Profile from './Profile'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 const App = () => {
   const [user, setUser] = useState([])
@@ -28,18 +28,22 @@ const App = () => {
     })
   }, []);
 
+  // const handleAddLink = (newLink) => {
+  //   const updatedLinkList = [...user.links, newLink]
+  //   setUser(updatedLinkList)
+  // }
 
   return (
     <div>
       <Layout>
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/login' element={<Login user={user} setUser={setUser} />}/>
-          <Route path='/signup' element={<Signup user={user} setUser={setUser} />}/>
-          <Route path='/generator' element={<Generator/>}/>
-          <Route path='/website' element={<Website />}/>
-          <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
-          <Route path='/layout' element={<Layout user={user} setUser={setUser}/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login user={user} setUser={setUser} />} />
+          <Route path='/signup' element={<Signup user={user} setUser={setUser} />} />
+          <Route path='/generator' element={<Generator />} />
+          <Route path='/website' element={<Website />} />
+          <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />
+          <Route path='/layout' element={<Layout user={user} setUser={setUser} />} />
         </Routes>
       </Layout>
     </div>

@@ -1,14 +1,15 @@
 import LinkCard from "./LinkCard";
 import { useState } from "react";
 
-const LinkList = ({ userId}) => {
+const LinkList = ({ userId, onAddLink}) => {
    const [title, setTitle] = useState('')
    const [url, setUrl] = useState('')
    const [links, setLinks] = useState([])
 
-   const handleNewCode = ((e) => {
+   const handleNewLink = ((e) => {
       e.preventDefault();
       const newLink = {
+         'user_id': userId,
          'link_title': title,
          'link_url': url
       }
@@ -20,7 +21,7 @@ const LinkList = ({ userId}) => {
          body: JSON.stringify(newLink)
       })
          .this(res => res.json())
-         .this(link => setLinks(link))
+         .this(link => onAddLink(link))
    })
 
 
@@ -39,7 +40,7 @@ const LinkList = ({ userId}) => {
                value={url}
                onChange={e => setUrl(e.target.value)}
             />
-            <button onSubmit={handleNewCode}>Add Code</button>
+            <button onClick={handleNewLink}>Add Code</button>
          </form>
       </div>
    )

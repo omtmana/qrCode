@@ -4,10 +4,8 @@ import { useState, useEffect } from 'react'
 import { Navigate, useNavigate } from "react-router-dom";
 import LinkList from "./Profile_Components/LinkList";
 
-const Profile = ({ user, setUser }) => {
-
+const Profile = ({ user, setUser}) => {
    const navigate = useNavigate()
-
    // console.log('CurrentUser', user)
    console.log('userLinks', user.links)
 
@@ -16,7 +14,6 @@ const Profile = ({ user, setUser }) => {
    }
    
    const userLinks = user?.links?.map((links) => {
-      // console.log(links)
       return (
       <li>
          <h1>{links.link_title}</h1>
@@ -26,8 +23,10 @@ const Profile = ({ user, setUser }) => {
    })
 
    const handleAddLink = (newLink) => {
-      navigate('')
+      const updatedLinkList = [...user?.links, newLink]
+      setUser(updatedLinkList)
    }
+
 
    return (
       <div className="profile">
@@ -38,7 +37,7 @@ const Profile = ({ user, setUser }) => {
          </div>
          <div className="profile-links-container">
             <h3> My Favorite Links </h3>
-            <LinkList userId={user.id} onAddLink={handleAddLink}/>
+            <LinkList key={user.id} userId={user.id} onAddLink={handleAddLink}/>
             <ul> {userLinks}</ul>
          </div>
          <div className="profile-codes-container">
