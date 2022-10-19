@@ -5,6 +5,7 @@ import Layout from './Layout'
 import Header from './Header'
 import Home from './Home'
 import Generator from './Generator'
+import Website from './Generator_Components/Website'
 import Signup from './Signup'
 import Login from './Login'
 import Profile from './Profile'
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/login' element={<Login user={user} setUser={setUser} />}/>
           <Route path='/signup' element={<Signup user={user} setUser={setUser} />}/>
           <Route path='/generator' element={<Generator/>}/>
+          <Route path='/website' element={<Website />}/>
           <Route path='/profile' element={<Profile user={user} setUser={setUser}/>}/>
           <Route path='/layout' element={<Layout user={user} setUser={setUser}/>} />
         </Routes>

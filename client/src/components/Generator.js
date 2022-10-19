@@ -26,7 +26,7 @@ const Generator = () => {
    }
 
    const handleWebDivClick = () => {
-      navigate('/')
+      navigate('/website')
    }
    return (
       <div className='generator'>
