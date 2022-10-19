@@ -10,7 +10,7 @@ const Login = ({ user, setUser }) => {
    const navigate = useNavigate()
 
    const handleSubmit = ((e) => {
-      e.peventDefault()
+      e.preventDefault();
       const formData = {
          'email': email,
          'password': password,
@@ -21,9 +21,16 @@ const Login = ({ user, setUser }) => {
             'Content-Type': 'application/json'
          },
          body: JSON.stringify(formData)
+      }).then((res) => {
+         if (res.ok) {
+            res.json().then((user) => setUser(user))
+            navigate('/profile')
+            console.log(formData)
+         }
       })
-      .then(res => res.json())
-      .then((data) => setUser(data))
+      console.log(formData)
+      // .then(res => res.json())
+      // .then((data) => setUser(data))
    })
 
    return (

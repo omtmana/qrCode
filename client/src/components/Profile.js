@@ -5,20 +5,17 @@ import { Navigate, useNavigate } from "react-router-dom";
 import LinkList from "./Profile_Components/LinkList";
 
 const Profile = ({ user, setUser }) => {
-   const [title, setTitle] = useState('')
-   const [url, setUrl] = useState('')
-   const [links, setLinks] = useState([])
 
    const navigate = useNavigate()
 
    // console.log('CurrentUser', user)
-   // console.log('userLinks', user.links)
+   console.log('userLinks', user.links)
 
    const handleCodeClick = () => {
       navigate('/generator')
    }
    
-   const userLinks = user.links.map((links) => {
+   const userLinks = user?.links?.map((links) => {
       // console.log(links)
       return (
       <li>
@@ -28,24 +25,9 @@ const Profile = ({ user, setUser }) => {
       )
    })
 
-   const handleNewCode = ((e) => {
-      e.preventDefault();
-      const newLink = {
-         'link_title': title,
-         'link_url': url
-      }
-      fetch('/links', {
-         method: 'POST',
-         headers: {
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(newLink)
-      })
-         .this(res => res.json())
-         .this(link => setLinks(link))
-   })
-
-
+   const handleAddLink = (newLink) => {
+      navigate('')
+   }
 
    return (
       <div className="profile">
@@ -56,21 +38,7 @@ const Profile = ({ user, setUser }) => {
          </div>
          <div className="profile-links-container">
             <h3> My Favorite Links </h3>
-            <form>
-               <input
-                  type='text'
-                  placeholder="Link Title"
-                  value={title}
-                  onChange={e => setTitle(e.target.value)}
-               />
-               <input
-                  type='text'
-                  placeholder="Link's URL"
-                  value={url}
-                  onChange={e => setUrl(e.target.value)}
-               />
-               <button onSubmit={handleNewCode}>Add Code</button>
-            </form>
+            <LinkList userId={user.id} onAddLink={handleAddLink}/>
             <ul> {userLinks}</ul>
          </div>
          <div className="profile-codes-container">

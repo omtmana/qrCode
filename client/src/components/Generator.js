@@ -9,25 +9,12 @@ const Generator = () => {
    const [url, setUrl] = useState('')
    const [qr, setQr] = useState('')
    const navigate = useNavigate()
-   const GenerateQRCode = () => {
-      QRCode.toDataURL(url, {
-         width: 800,
-         margin: 2,
-         color: {
-            dark: '#335383FF',
-            light: '#EEEEEEFF'
-         }
-      }, (err, url) => {
-         if (err) return console.error(err)
 
-         console.log(url)
-         setQr(url)
-      })
-   }
 
    const handleWebDivClick = () => {
       navigate('/website')
    }
+
    return (
       <div className='generator'>
          <h1> QR Code Generator </h1>
