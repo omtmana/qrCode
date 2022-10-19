@@ -1,22 +1,55 @@
 .generator {
-   display: flex;
-   /* border: 2px solid pink; */
+   /* display: flex; */
    margin: 3em;
    height: 40em;
    justify-content: center;
    font-family: 'Caveat' ;
 }
 
+.generator-main {
+   display: flex;
+   /* border: 2px solid pink; */
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   height: 100%;
+}
+
+.generator-web-container {
+   border: 2px solid orange;
+   width: 15em;
+   height: 15em;
+   margin: 2em;
+   border-radius: 10px;
+   text-align: center;
+}
+
+.generator-card-container {
+   border: 2px solid red;
+   text-align: center;
+   width: 15em;
+   height: 15em;
+   margin: 2em;
+   border-radius: 10px;
+}
+
+.generator-soon-container {
+   border: 2px solid violet;
+   text-align: center;
+   width: 15em;
+   height: 15em;
+   margin: 2em;
+   border-radius: 10px;
+}
+
+
+
 .generator-container {
-   /* border: 2px solid violet; */
    display: flex;
    flex-direction: column;
-   /* justify-content: center; */
    align-items: center;
    height: 28em;
    width: 60em;
    margin: 2em;
-   /* padding: -2em; */
 }
 
 .generator-button {
@@ -24,11 +57,9 @@
    border: 2px solid #349BBC;
    background-color: #349BBC;
    color: white;
-   /* border: 1px solid orange; */
    width: 10em;
    height: 2.3em;
    border-radius: 6px;
-   /* padding-top: 1em; */
 }
 
 .qr-name {
@@ -44,9 +75,7 @@
 }
 
 .qr-image-container {
-   /* border: 2px solid green; */
    padding: 2em;
-   /* background-color: black; */
 }
 
 .qr-image {
@@ -55,7 +84,5 @@
       height: 350px;
       border-radius: 1em;
       margin-bottom: .5em;
-      /* background-color: white; */
-      /* margin: 2rem auto; */
 }
 

@@ -34,12 +34,13 @@ const Profile = ({ user}) => {
 
    return (
       <div className="profile">
-         <div>
+         <div className="profile-user-container">
+            <img src={user.profile_pic} width='200' />
             <h1>{user.name}</h1>
             <p>{user.email}</p>
-            <img src={user.profile_pic} width='200' />
          </div>
-         <div>
+         <div className="profile-links-container">
+            <h3> My Favorite Links </h3>
             <form>
                <input
                   type='text'
@@ -55,6 +56,11 @@ const Profile = ({ user}) => {
                />
                <button onSubmit={handleNewCode}>Add Code</button>
             </form>
+         </div>
+         <div className="profile-codes-container">
+            <h3> My QR Codes </h3>
+            <button> Generate New QR Code</button>
+
          </div>
                {/* <LinkList links={links}/> */}
       </div>

@@ -3,25 +3,56 @@
 }
 
 .profile {
-   border: 3px solid salmon;
+   /* border: 3px solid salmon; */
    margin-left: 3em;
    margin-right: 3em;
    height: 40em;
    display: flex;
    flex-direction: column;
    /* justify-content: center; */
-   align-items: center;
+   /* align-items: center; */
 }
 
-.profile-name {
+/* .profile-name {
    font-family: 'Caveat';
-   /* justify-content: center; */
+   justify-content: center;
+} */
+
+.profile-user-container {
+   text-align: left;
+   margin-bottom: 2em;
+   margin-top: 3em;
+   padding-top: 2em;
+   padding-left: 1em;
+   border: 1px solid #D3D3D3;
+   /* border-bottom: 1px solid #D3D3D3; */
+   border-radius: 5px;
+   background-color: #F5F5F5;
 }
 
-.profile-name-container {
+.profile-links-container {
+   /* width: 100%; */
+   border: 1px solid #D3D3D3;
+   background-color: #F5F5F5;
+   border-radius: 5px;
+   padding-bottom: 2em;
+   padding-left: 1em;
+   line-height: 0.1em;
+}
+
+.profile-codes-container {
+   border: 1px solid #D3D3D3;
+   background-color: #F5F5F5;
+   border-radius: 5px;
+   padding-left: 1em;
+   padding-bottom: 2em;
+   margin-top: 1em;
+}
+
+/* .profile-name-container {
    border: 2px solid orange;
    width: 20em;
-}
+} */
 
 .input-link {
    border: 2px solid green;

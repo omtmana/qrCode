@@ -1,13 +1,14 @@
 import QRCode from 'qrcode'
 // import QRCode from 'react-qr-code'
 import { useState, useEffect } from 'react'
+import {useNavigate } from 'react-router-dom'
 import '../styles/Generator.css'
 // import CallingQR from './Profile_Components/CallingQR'
 
 const Generator = () => {
    const [url, setUrl] = useState('')
    const [qr, setQr] = useState('')
-
+   const navigate = useNavigate()
    const GenerateQRCode = () => {
       QRCode.toDataURL(url, {
          width: 800,
@@ -24,44 +25,65 @@ const Generator = () => {
       })
    }
 
+   const handleWebDivClick = () => {
+      navigate('/')
+   }
    return (
-      <div className="generator">
-         <div className='generator-container'>
-            <h1 className='qr-name' style={{fontFamily: 'Caveat'}}>QR Generator</h1>
-            <input
-               type="text"
-               placeholder="URL goes here"
-               className='qr-input'
-               value={url}
-               onChange={e => setUrl(e.target.value)} />
-            <button onClick={GenerateQRCode} className='generator-button'>Generate</button>
-            <div className='qr-image-main-container'>
-               {qr && <div className='qr-image-container'>
-                  <img src={qr} className='qr-image' />
-                  <a href={qr} download="qrcode.png" style={{textDecoration:'none', color: 'orange', fontSize:'1.7em'}}>Download</a>
-               </div>
-               }
+      <div className='generator'>
+         <h1> QR Code Generator </h1>
+         <div className='generator-main'>
+            {/* button like. when you click it, it directs you to the form of qr generator */}
+            <div className='generator-web-container' onClick={handleWebDivClick}>
+               <h4> Website </h4>
+            </div>
+            <div className='generator-card-container'>
+               <h4> Personal Information</h4>
+            </div>
+            {/* future Qr code Generator */}
+            <div className='generator-soon-container'>
+               <h4> Comming Soon: PDF </h4>
+            </div>
+            <div className='generator-soon-container'>
+               <h4> Coming Soon: Images </h4>
+            </div>
+            <div className='generator-soon-container'>
+
+            </div>
+            <div className='generator-soon-container'>
+
+            </div>
+            <div className='generator-soon-container'>
+
+            </div>
+            <div className='generator-soon-container'>
+
             </div>
          </div>
       </div>
    )
+
 }
 
-// const Generator = () => {
-//    const [src, setSrc] = useState('')
-
-//    useEffect(() => {
-//       // Qr Code package
-//       QRCode.toDataURL().then((data) => {
-//          setSrc(data)
-//       })
-//    }, [])
-//    return(
-//       <div>
-//          {/* <img src={src} /> */}
-//          <CallingQR src={src} setSrc={setSrc} />
-//       </div>
-//    )
-// }
 
 export default Generator;
+// return (
+//    <div className="generator">
+//       <div className='generator-container'>
+//          <h1 className='qr-name' style={{fontFamily: 'Caveat'}}>QR Generator</h1>
+//          <input
+//             type="text"
+//             placeholder="URL goes here"
+//             className='qr-input'
+//             value={url}
+//             onChange={e => setUrl(e.target.value)} />
+//          <button onClick={GenerateQRCode} className='generator-button'>Generate</button>
+//          <div className='qr-image-main-container'>
+//             {qr && <div className='qr-image-container'>
+//                <img src={qr} className='qr-image' />
+//                <a href={qr} download="qrcode.png" style={{textDecoration:'none', color: 'orange', fontSize:'1.7em'}}>Download</a>
+//             </div>
+//             }
+//          </div>
+//       </div>
+//    </div>
+// )
