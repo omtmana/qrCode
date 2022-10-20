@@ -1,0 +1,11 @@
+.website-qr-container {
+   border: 2px solid black;
+   display: flex;
+   width: 30em;
+   height: auto;
+   /* width: fit-content; */
+}
+
+.website-qr {
+   width: fit-content;
+}

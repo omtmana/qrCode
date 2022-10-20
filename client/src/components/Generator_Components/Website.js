@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import  QRCode from 'qrcode'
-
+import '../Generator_Components/Website.css'
 const Website = () => {
    const [url, setUrl] = useState('')
    const [qr, setQr] = useState('')
+   const [copy, setCopy]= useState('')
 
    const GenerateQRCode = () => {
       QRCode.toDataURL(url, {
@@ -15,11 +16,17 @@ const Website = () => {
          }
       }, (err, url) => {
          if (err) return console.error(err)
-
-         console.log('url',url)
+         // console.log('url',url)
          setQr(url)
       })
    }
+
+   const handleCopyCode = ((e) => {
+      e.preventDefault();
+      const docCopy = qr?.execCommand('copy')
+      console.log('docCopy',docCopy)
+      // setCopy(docCopy)
+   })
 
 return (
    <div className="generator">
@@ -36,6 +43,7 @@ return (
             {qr && <div className='qr-image-container'>
                <img src={qr} className='qr-image' />
                <a href={qr} download="qrcode.png" style={{textDecoration:'none', color: 'orange', fontSize:'1.7em'}}>Download</a>
+               <button onClick={handleCopyCode}> Copy QR Code </button>
             </div>
             }
          </div>

@@ -31,11 +31,11 @@
 }
 
 .home-container-2 {
-   /* border: 15px solid black; */
+   border: 2px solid black;
    /* border-radius: 1em; */
    position: inherit;
    margin-top: 3em;
-   height: 15em;
+   height: 20em;
    justify-content: space-between;
    /* padding: 3em; */
    margin-left: 4em;
