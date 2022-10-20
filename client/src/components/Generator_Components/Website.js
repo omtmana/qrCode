@@ -16,7 +16,7 @@ const Website = () => {
       }, (err, url) => {
          if (err) return console.error(err)
 
-         console.log(url)
+         console.log('url',url)
          setQr(url)
       })
    }

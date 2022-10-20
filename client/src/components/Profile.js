@@ -1,14 +1,14 @@
 import ProfileContainer from "./Profile_Components/ProfileContainer";
 import '../styles/Profile.css'
 import { useState, useEffect } from 'react'
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import LinkList from "./Profile_Components/LinkList";
 import QRList from "./Profile_Components/QRList";
 
 const Profile = ({ user, setUser}) => {
    const navigate = useNavigate()
    // console.log('CurrentUser', user)
-   console.log('userLinks', user.links)
+   // console.log('userLinks', user.links)
    
    const handleCodeClick = () => {
       navigate('/generator')
@@ -20,7 +20,7 @@ const Profile = ({ user, setUser}) => {
    }
 
    const handleAddCode = (newCode) => {
-      const updatedCodeList = [...user?.links, newCode]
+      const updatedCodeList = [...user?.codes, newCode]
       setUser(updatedCodeList)
    }
    
@@ -33,8 +33,6 @@ const Profile = ({ user, setUser}) => {
    //    )
    // })
 
-
-
    return (
       <div className="profile">
          <div className="profile-user-container">
@@ -45,26 +43,12 @@ const Profile = ({ user, setUser}) => {
          <div className="profile-links-container">
             <h3> My Favorite Links </h3>
             <LinkList key={user.id} userId={user.id} onAddLink={handleAddLink} user={user}/>
-            {/* <ul> {userLinks}</ul> */}
-            {/* <ul>
-            {
-               user?.links?.map((links) => {
-                  return (
-                     <li> 
-                        <h3>{links.link_title}</h3>
-                        <h4>{links.link_url}</h4> 
-                     </li>
-
-                  )
-               })
-            }
-
-            </ul> */}
          </div>
          <div className="profile-codes-container">
             <h3> My QR Codes </h3>
-            <QRList userId={user.id} onAddCode={handleAddCode}/>
+            <QRList userId={user.id} onAddCode={handleAddCode} user={user}/>
             <button onClick={handleCodeClick} className=""> Generate New QR Code</button>
+            <Link to='/generator'> Generate New QR Code</Link>
          </div>
 
       </div>
