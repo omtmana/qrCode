@@ -6,17 +6,10 @@ import LinkList from "./Profile_Components/LinkList";
 import QRList from "./Profile_Components/QRList";
 
 const Profile = ({ user, setUser }) => {
-   const [links, setLinks] = useState([])
+   // const [links, setLinks] = useState([])
    const navigate = useNavigate()
    // console.log('CurrentUser', user)
    // console.log('userLinks', user.links)
-
-   useEffect(() => {
-      fetch('/links')
-         .then(res => res.json())
-         .then((links) => setLinks(links))
-   },[])
-
 
    const handleCodeClick = () => {
       navigate('/generator')
@@ -32,9 +25,6 @@ const Profile = ({ user, setUser }) => {
       setUser(updatedCodeList)
    }
 
-   const handleDelete = (id) => {
-      setLinks(links?.filter((listDelete) => listDelete.id !== id))
-   }
 
    return (
       <div className="profile">
@@ -46,7 +36,7 @@ const Profile = ({ user, setUser }) => {
          </div>
          <div className="profile-links-container">
             <h3> My Favorite Links </h3>
-            <LinkList key={user.id} userId={user.id} links={links} onAddLink={handleAddLink} onHandleDelete={handleDelete} user={user} />
+            <LinkList key={user.id} userId={user.id} onAddLink={handleAddLink} user={user} />
          </div>
          <div className="profile-codes-container">
             <h3> My QR Codes </h3>

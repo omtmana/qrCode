@@ -37,8 +37,10 @@ const LinkList = ({ userId, onAddLink, user, onHandleDelete}) => {
       fetch(`/links/${link.id}}`, {
          method: 'DELETE',
       })
-      onHandleDelete(link.id)
+      setLink(link?.filter((listDelete) => listDelete.id !== link.id))
    })
+
+
 
 
    return (
