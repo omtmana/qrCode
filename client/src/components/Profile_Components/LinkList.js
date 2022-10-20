@@ -1,12 +1,18 @@
 import LinkCard from "./LinkCard";
 import { useEffect, useState } from "react";
 
-const LinkList = ({ userId, onAddLink, user, links, onHandleDelete}) => {
-   const {id, link_title, link_url } = links
+const LinkList = ({ userId, onAddLink, user, onHandleDelete}) => {
+   const [link, setLink] = useState([])
    const [title, setTitle] = useState('')
    const [url, setUrl] = useState('')
    // const [links, setLinks] = useState([])
    // console.log('userID', user.links)
+
+   useEffect(() => {
+      fetch('/links')
+      .then(res => res.json())
+      .then((link) => setLink(link))
+   })
 
    const handleNewLink = ((e) => {
       e.preventDefault();
@@ -23,15 +29,15 @@ const LinkList = ({ userId, onAddLink, user, links, onHandleDelete}) => {
          body: JSON.stringify(newLink)
       })
          .this(res => res.json())
-         .this(link => onAddLink(link))
+         .this(link => setLink(link))
    })
    
    const handleDelete = ((e) => {
       e.preventDefault();
-      fetch(`/links/${id}}`, {
+      fetch(`/links/${link.id}}`, {
          method: 'DELETE',
       })
-      onHandleDelete(id)
+      onHandleDelete(link.id)
    })
 
 
@@ -54,7 +60,7 @@ const LinkList = ({ userId, onAddLink, user, links, onHandleDelete}) => {
          </form>
          <ul>
             {
-               links.map((links) => {
+               link.map((links) => {
                   return (
                      <li>
                         <h3>{links.link_title}</h3>
