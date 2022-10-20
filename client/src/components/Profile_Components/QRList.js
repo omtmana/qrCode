@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react"
 
 const QRList = ({userId, onAddCode, user}) => {
-   console.log('userCodes', user.codes)
+   // console.log('userCodes', user.codes)
    const [codeTitle, setCodeTitle] = useState('')
    const [codeImage, setCodeImage] = useState('')
+   const[code, setCode] = useState([])
+
+   useEffect(() => {
+      fetch('/codes')
+      .then(res => res.json())
+      .then((code) => setCode(code))
+   })
 
    const handleAddCode = ((e) => {
       e.preventDefault();
@@ -20,7 +27,7 @@ const QRList = ({userId, onAddCode, user}) => {
          body: JSON.stringify(newCode)
       })
       .this(res => res.json())
-      .this((qrCode) => onAddCode(qrCode))
+      .this((qrCode) => setCode(qrCode))
    })
 
 
@@ -43,7 +50,7 @@ const QRList = ({userId, onAddCode, user}) => {
          </form>
          <ul>
             {
-               user?.codes?.map((codes) => {
+               code?.map((codes) => {
                   return (
                      <li>
                         <h3>{codes.title}</h3>

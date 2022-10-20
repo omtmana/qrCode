@@ -4,7 +4,7 @@ class CodesController < ApplicationController
    def index
       user = find_user
       if user
-         render json: user.code
+         render json: user.codes
       else
          render json: {error: 'User Code not found'}
       end
@@ -17,6 +17,16 @@ class CodesController < ApplicationController
    end
    
 #   delete '/codes/:id', to: 'codes#destroy'
+  def destroy 
+   user = find_user
+   if user
+    code = Code.find_by(id: params[:id])
+    code.destroy
+    head :no_content
+   else
+      render json: {error:'Error Delete'}
+   end
+  end
 
 private
 

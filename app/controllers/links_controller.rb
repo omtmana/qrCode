@@ -4,7 +4,7 @@ class LinksController < ApplicationController
    def index
       user = find_user
       if user
-         render json: user.link
+         render json: user.links
       else
          render json: {error: 'User Link not found'}
       end
@@ -24,6 +24,17 @@ class LinksController < ApplicationController
       link = Link.create(link_params)
       render json: link, status: :created
    end
+
+   def destroy 
+      user = find_user
+      if user
+      link = Link.find_by(id: params[:id])
+      link.destroy
+      head :no_content
+      else
+         render json: {error: 'Error Delete'}
+      end 
+  end
 
    private
 

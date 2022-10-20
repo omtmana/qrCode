@@ -1,10 +1,12 @@
 import LinkCard from "./LinkCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const LinkList = ({ userId, onAddLink, user}) => {
+const LinkList = ({ userId, onAddLink, user, links, onHandleDelete}) => {
+   const {id, link_title, link_url } = links
    const [title, setTitle] = useState('')
    const [url, setUrl] = useState('')
    // const [links, setLinks] = useState([])
+   // console.log('userID', user.links)
 
    const handleNewLink = ((e) => {
       e.preventDefault();
@@ -22,6 +24,14 @@ const LinkList = ({ userId, onAddLink, user}) => {
       })
          .this(res => res.json())
          .this(link => onAddLink(link))
+   })
+   
+   const handleDelete = ((e) => {
+      e.preventDefault();
+      fetch(`/links/${id}}`, {
+         method: 'DELETE',
+      })
+      onHandleDelete(id)
    })
 
 
@@ -44,13 +54,13 @@ const LinkList = ({ userId, onAddLink, user}) => {
          </form>
          <ul>
             {
-               user?.links?.map((links) => {
+               links.map((links) => {
                   return (
                      <li>
                         <h3>{links.link_title}</h3>
                         <h4>{links.link_url}</h4>
+                        <button onClick={handleDelete}> Delete </button>
                      </li>
-
                   )
                })
             }

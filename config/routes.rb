@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/links', to: 'links#index'
   get '/links/:id', to: 'links#show'
   post '/links', to: 'links#create'
+  delete 'links/:id', to: 'links#destroy'
 
   #CallingCode
   get '/callingcodes', to: 'callingcodes#index'
