@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   # # Login and Logout Routes - Sessions.rb
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
   # Links
   get '/links', to: 'links#index'
   get '/links/:id', to: 'links#show'
@@ -16,6 +15,11 @@ Rails.application.routes.draw do
 
   #CallingCode
   get '/callingcodes', to: 'callingcodes#index'
-  get '/callingcodes', to: 'callingcodes#show'
+  get '/callingcodes/:id', to: 'callingcodes#show'
   post '/callingcodes', to: 'callingcodes#create'
+
+  #Codes.rb
+  get '/codes', to: 'codes#index'
+  post '/codes', to: 'codes#create'
+  delete '/codes/:id', to: 'codes#destroy'
 end

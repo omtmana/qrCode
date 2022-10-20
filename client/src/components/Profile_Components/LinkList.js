@@ -1,7 +1,7 @@
 import LinkCard from "./LinkCard";
 import { useState } from "react";
 
-const LinkList = ({ userId, onAddLink}) => {
+const LinkList = ({ userId, onAddLink, user}) => {
    const [title, setTitle] = useState('')
    const [url, setUrl] = useState('')
    // const [links, setLinks] = useState([])
@@ -42,6 +42,19 @@ const LinkList = ({ userId, onAddLink}) => {
             />
             <button onClick={handleNewLink}>Add Code</button>
          </form>
+         <ul>
+            {
+               user?.links?.map((links) => {
+                  return (
+                     <li>
+                        <h3>{links.link_title}</h3>
+                        <h4>{links.link_url}</h4>
+                     </li>
+
+                  )
+               })
+            }
+         </ul>
       </div>
    )
 }
