@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
   const [user, setUser] = useState([])
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   // const [userLinks, setUserLinks] = useState([])
 
   console.log("HERE", user)
@@ -22,6 +23,7 @@ const App = () => {
         res.json().then((user) => {
           if (!!user.email) {
             setUser(user)
+            setIsLoggedIn(true)
           }
         })
       }
@@ -33,6 +35,8 @@ const App = () => {
   //   setUser(updatedLinkList)
   // }
 
+  console.log('isLog', isLoggedIn)
+
   return (
     <div>
       <Layout>
@@ -40,10 +44,11 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login user={user} setUser={setUser} />} />
           <Route path='/signup' element={<Signup user={user} setUser={setUser} />} />
+          {/* <Route path='/header' element={<Header isLoggedIn={isLoggedIn} />}/> */}
           <Route path='/generator' element={<Generator />} />
           <Route path='/website' element={<Website />} />
           <Route path='/profile' element={<Profile user={user} setUser={setUser}/>} />
-          <Route path='/layout' element={<Layout user={user} setUser={setUser} />} />
+          <Route path='/layout' element={<Layout user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         </Routes>
       </Layout>
     </div>
