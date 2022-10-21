@@ -40,7 +40,7 @@ const Profile = ({ user, setUser }) => {
          </div>
          <div className="profile-codes-container">
             <h3> My QR Codes </h3>
-            <QRList userId={user.id} onAddCode={handleAddQRCode} user={user} />
+            <QRList key={user.id} userId={user.id} onAddCode={handleAddQRCode} user={user} />
             <button onClick={handleCodeClick} className=""> Generate New QR Code</button>
             {/* <Link to='/generator'> Generate New QR Code</Link> */}
          </div>

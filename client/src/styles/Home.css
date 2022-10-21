@@ -31,15 +31,15 @@
 }
 
 .home-container-2 {
-   border: 2px solid black;
+   /* border: 2px solid black; */
    /* border-radius: 1em; */
    position: inherit;
    margin-top: 3em;
    height: 20em;
    justify-content: space-between;
    /* padding: 3em; */
-   margin-left: 4em;
-   margin-right: 4em;
+   margin-left: 3em;
+   margin-right: 3em;
    /* background-color: rgba(255, 165, 0, 0.50); */
    font-size: 30px;
    display:flex;
@@ -54,7 +54,7 @@
 }
 
 .home-container-2b {
-   border: 2px solid black;
+   /* border: 2px solid black; */
    border-radius: 1em;
    /* margin-left: 3em; */
    padding: 5em;

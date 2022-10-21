@@ -62,7 +62,7 @@ const LinkList = ({ userId, onAddLink, user, onHandleDelete}) => {
          </form>
          <ul>
             {
-               link.map((links) => {
+               link?.map((links) => {
                   return (
                      <li>
                         <h3>{links.link_title}</h3>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../styles/Header.css'
 import Check from '../check.jpeg'
 
@@ -6,11 +6,14 @@ const Header = ({ user, setUser, isLoggedIn, setIsLoggedIn}) => {
 // console.log('user', user)
    // console.log('login', setIsLoggedIn(user))
    console.log('isLog', isLoggedIn)
+
+   const navigate = useNavigate()
    function handleLogoutClick() {
       fetch("/logout", { method: "DELETE" }).then((r) => {
          if (r.ok) {
             setUser(null);
             setIsLoggedIn(false)
+            navigate('/')
          }
       });
    }

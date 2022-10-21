@@ -54,7 +54,7 @@ const QRList = ({userId, onAddCode, user}) => {
                   return (
                      <li>
                         <h3>{codes.title}</h3>
-                        <img src={codes.image} />
+                        <img src={codes.image} width='200' />
                      </li>
                   )
                })
